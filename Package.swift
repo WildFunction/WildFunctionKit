@@ -1,10 +1,12 @@
 // swift-tools-version: 6.2
 import PackageDescription
 
-/// Treat all warnings as errors. Applies to this package's targets only.
-let strictSettings: [SwiftSetting] = [
-    .treatAllWarnings(as: .error),
-]
+/// Warnings are errors only when WILDFUNCTIONKIT_STRICT is set (CI and local development).
+/// It must stay off for consumers: Xcode suppresses warnings in remote packages,
+/// and combining that with warnings-as-errors fails the build.
+let strictSettings: [SwiftSetting] = Context.environment["WILDFUNCTIONKIT_STRICT"] == nil
+    ? []
+    : [.treatAllWarnings(as: .error)]
 
 let package = Package(
     name: "WildFunctionKit",

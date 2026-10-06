@@ -12,7 +12,7 @@ WildFunction iOS App 的基础工具库：不会崩溃的类型扩展、hex 颜�
 ## 安装
 
 ```swift
-.package(url: "https://github.com/WildFunction/WildFunctionKit.git", from: "0.2.0")
+.package(url: "https://github.com/WildFunction/WildFunctionKit.git", from: "0.2.1")
 // target 依赖：.product(name: "WildFunctionKit", package: "WildFunctionKit")
 ```
 
@@ -80,7 +80,7 @@ AppLog.info("loaded", category: .network)
 ## 测试
 
 ```bash
-xcodebuild test -scheme WildFunctionKit -destination 'platform=iOS Simulator,name=iPhone 17'
+WILDFUNCTIONKIT_STRICT=1 xcodebuild test -scheme WildFunctionKit -destination 'platform=iOS Simulator,name=iPhone 17'
 ```
 
 依赖 UIKit，不能用 `swift test`。

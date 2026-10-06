@@ -12,7 +12,7 @@ Base utilities for WildFunction iOS apps: crash-safe type extensions, hex colors
 ## Install
 
 ```swift
-.package(url: "https://github.com/WildFunction/WildFunctionKit.git", from: "0.2.0")
+.package(url: "https://github.com/WildFunction/WildFunctionKit.git", from: "0.2.1")
 // target dependency: .product(name: "WildFunctionKit", package: "WildFunctionKit")
 ```
 
@@ -80,7 +80,7 @@ AppLog.info("loaded", category: .network)
 ## Test
 
 ```bash
-xcodebuild test -scheme WildFunctionKit -destination 'platform=iOS Simulator,name=iPhone 17'
+WILDFUNCTIONKIT_STRICT=1 xcodebuild test -scheme WildFunctionKit -destination 'platform=iOS Simulator,name=iPhone 17'
 ```
 
 `swift test` does not work (UIKit).
