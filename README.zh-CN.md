@@ -56,6 +56,9 @@ UIColor(wf_hex: 0xFF8800, alpha: 0.5)
 UIColor.wf_hex(serverValue, fallback: .label)
 color.wf_hexString()                             // "#FF8800"
 
+// UIResponder
+view.wf_nearestViewController                    // 顺着响应链往上最近的视图控制器
+
 // 远程图片（带缓存，按视图尺寸降采样，cell 复用安全）
 imageView.wf_setImage(with: url, placeholder: placeholderImage)
 imageView.wf_setImage(with: "https://example.com/a.png",
